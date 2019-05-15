@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const { windows, android, linux, macos } = require('platform-detect')
 const { spawn } = require('child_process')
 
@@ -52,8 +54,10 @@ function openDialog ({ prompt }) {
 
 module.exports = openDialog
 
-openDialog({}).then(files => {
-    console.log(files)
-}).catch(err => {
-    console.error(`${err}`)
-})
+if (require.main === module) {
+    openDialog({}).then(files => {
+        console.log(files)
+    }).catch(err => {
+        console.error(`${err}`)
+    })
+}

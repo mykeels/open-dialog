@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Opens a file dialog window, so you can choose a file, or multiple",
   "main": "index.js",
+  "bin": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
