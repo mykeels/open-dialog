@@ -1,0 +1,14 @@
+{
+  "name": "open-dialog",
+  "version": "1.0.0",
+  "description": "Opens a file dialog window, so you can choose a file, or multiple",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mykeels",
+  "license": "MIT",
+  "dependencies": {
+    "platform-detect": "^2.0.3"
+  }
+}
