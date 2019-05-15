@@ -1,4 +1,4 @@
-const { windows, android, linux, macos, tizen } = require('platform-detect')
+const { windows, android, linux, macos } = require('platform-detect')
 const { spawn } = require('child_process')
 
 function openDialog ({ prompt }) {
@@ -26,11 +26,14 @@ function openDialog ({ prompt }) {
             $file = Get-FileName # the variable contains user folder selection
             write-host $file.Trim()` ])
         }
+        else if (linux || android) {
+            throw new Error('linux not implemented')
+        }
 
         const lines = []
 
         script.stdout.on('data', (line) => {
-            if (line) {
+            if (line && line.toString().trim()) {
                 lines.push(line.toString().trim())
             }
         })
